@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+</head>
+<body>
+ <h1> AJAX </h1>
+ <input type="text" id="mi_texto">
+ <input type="text" id="mi_texto2">
+ <button id="boton_datos"> Traer Datos </button>
+
+ <div id="res"></div>
+ <img id="img_res">
+
+ <script
+src="https://code.jquery.com/jquery-3.1.1.js"
+integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+crossorigin="anonymous"></script>
+
+ <script type="text/javascript">
+
+ function traer_datos(){
+   var api_key = "dc6zaTOxFJmzC"
+   var url = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="
+   var tag = "spiderman";
+   $.getJSON(url+tag, {}, function(resultado){
+     var img_url = resultado.data.image_url;
+     $("#img_res").attr('src', img_url)
+   });
+ };
+
+ function copiar_valor(e){
+   console.log(e.target);
+   var texto =$(e.target).val();
+   $("#res").html(texto);
+ }
+
+ $(function(){
+   $("#boton_datos").click(traer_datos);
+
+   $("#mi_texto").on('input', copiar_valor);
+   $("#mi_texto2").on('input', copiar_valor);
+
+ });
+
+ </script>
+</body>
+</html>

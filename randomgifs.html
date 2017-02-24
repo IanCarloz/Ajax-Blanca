@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RanDOM gif</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <body style="background-color: deepskyblue;">
+  </head>
+  <body>
+    <h1>Random Gif Generator</h1>
+    <input type="text" class="u-full-width" placeholder="Escribe aqui los tags" id="tags">
+    <button align="center" class="u-full-width" color="blue" size="medium" id="reload"> Otro </button>
+    <br>
+    <img id="img_res">
+    <script
+   src="https://code.jquery.com/jquery-3.1.1.js"
+   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+   crossorigin="anonymous"></script>
+   <script type="text/javascript">
+
+     function get_gif(){
+
+       var url = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=";
+       var tag = $("#tags").val();
+
+       $.getJSON( url + tag , {} ,  function(resultado){
+         var img_url = resultado.data.image_url;
+         $("#img_res").attr('src', img_url);
+       });
+     };
+
+     $("#tags").on('input', get_gif);
+     $("#reload").click(get_gif);
+
+   </script>
+  </body>
+</html>

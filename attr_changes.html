@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <body style="background-color: deepskyblue;">
+      <style>
+        .rojo{
+          font-weight: 800;
+          color: red;
+        }
+        .grande{
+          width: 200px;
+          height: 200px;
+        }
+      </style>
+  </head>
+  <body>
+    <h1 id="titulo"> Atributos </h1>
+
+    <button id="btn_accion"> Change </button>
+
+    <script
+   src="https://code.jquery.com/jquery-3.1.1.js"
+   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+   crossorigin="anonymous"></script>
+   <script>
+   function cambiar_clases(e){
+     // e información del evento
+     var elem = $(e.target);
+     elem.addClass("rojo");
+     elem.removeClass("")
+     elem.toggleClass("grande");
+   }
+
+   $(function(){
+     // event listeners
+     $("#btn_accion").click(cambiar_clases);
+   });
+
+   </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  </head>
+  <body>
+
+    <h1>Contador</h1>
+    <input type="text" id="texto">
+    <button type="button" id="trigger">Run!</button>
+    <div id="output"></div>
+
+    <script
+   src="https://code.jquery.com/jquery-3.1.1.js"
+   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+   crossorigin="anonymous"></script>
+
+   <script type="text/javascript">
+
+   function first(){
+     var letras = $("#texto").val();
+     var numero = letras.length;
+     console.log(letras);
+     for (var i = 0; i < numero; i++) {
+       console.log("algo");
+     }
+   }
+   $("#trigger").click(first);
+   </script>
+  </body>
+</html>
